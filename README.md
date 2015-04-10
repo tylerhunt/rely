@@ -28,6 +28,13 @@ Or install it yourself as:
 ## Usage
 
 ``` ruby
+require 'rely/dependencies'
+
+class Service
+  extend Rely::Dependencies
+
+  dependency :value, -> { :default_value }
+end
 ```
 
 
