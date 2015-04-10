@@ -1,5 +1,10 @@
 # Rely
 
+[![Build Status][travis]][travis-web]
+
+[travis]: https://travis-ci.org/tylerhunt/rely.svg?branch=master
+[travis-web]: https://travis-ci.org/tylerhunt/rely
+
 A small library for simplifying dependency injection.
 
 
