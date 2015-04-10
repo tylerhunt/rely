@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors = ['Tyler Hunt']
   spec.email = %w(tyler@tylerhunt.com)
   spec.summary = 'A small library for simplifying dependency injection.'
-  spec.homepage = ''
+  spec.homepage = 'https://github.com/tylerhunt/rely'
   spec.license = 'MIT'
 
   spec.files = `git ls-files -z`.split("\x0")
