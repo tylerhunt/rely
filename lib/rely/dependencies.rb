@@ -27,7 +27,8 @@ module Rely
         if instance_variable_defined?(:"@#{attribute}")
           instance_variable_get(:"@#{attribute}")
         else
-          instance_variable_set(:"@#{attribute}", default.call)
+          default_value = instance_exec(&default)
+          instance_variable_set(:"@#{attribute}", default_value)
         end
       end
 

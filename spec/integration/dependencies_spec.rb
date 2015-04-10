@@ -53,6 +53,22 @@ RSpec.describe 'Dependencies' do
     end
   end
 
+  describe 'with inter-dependency references' do
+    let(:service_class) {
+      Class.new(abstract_service_class) do
+        dependency :value, -> { :default }
+        dependency :dependent_value, -> { Struct.new(:value).new(value) }
+        public :dependent_value
+      end
+    }
+
+    subject(:service) { service_class.new(defaults) }
+
+    it 'returns the injected value' do
+      expect(service.dependent_value.value).to eq :default
+    end
+  end
+
   describe 'with inheritance' do
     let(:subservice_class) {
       Class.new(service_class) do
